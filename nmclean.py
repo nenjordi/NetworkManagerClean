@@ -1,9 +1,17 @@
 import NetworkManager
 import re
 import os
+import sys
 
-# pattern = "br-.*"
-pattern = "docker?.*"
+if len(sys.argv) > 2:
+    print("Usage " + sys.argv[0] + " RegEx");
+elif len(sys.argv) == 1:
+    # pattern = "br-.*"
+    pattern = "docker?.*"
+else:
+    pattern = sys.argv[0]
+
+
 
 c = NetworkManager.const
 
